@@ -1,4 +1,3 @@
-import json
 import sys
 from datetime import datetime
 
@@ -6,7 +5,7 @@ from app.card import card
 
 
 def main():
-    __version__ = "1.1.2"
+    __version__ = "1.1.3"
     career_start_date = datetime.strptime("2014-12-11", "%Y-%m-%d")
     career_continue_date = datetime.now().strftime("%Y-%m-%d")
     career_continue_date = datetime.strptime(career_continue_date, "%Y-%m-%d")
