@@ -6,16 +6,15 @@ Developed in python. The card would look like this:
 ![image](image/calvin.png)
 
 To see my digital profile just run the command:
-```python
-pipx run corefinder
-```
+
+`pip install --user corefinder`
+
 
 To get help run this command:
-```python
-corefinder --help
-```
+
+`corefinder --help`
+
 
 To get version run this command:
-```python
-corefinder --version
-```
+
+`corefinder --version`
