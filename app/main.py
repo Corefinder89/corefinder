@@ -1,7 +1,8 @@
 import json
+import sys
 from datetime import datetime
 
-from card import card
+from app.card import card
 
 
 def main():
@@ -18,6 +19,15 @@ def main():
 
     # Get the total work experience
     work_exp = f"{num_years} years and {num_months} months"
+
+    if "--version" in sys.argv[1:]:
+        print(__version__)
+        exit(0)
+
+    if "--help" in sys.argv[1:]:
+        print("To run the module execute pipx run corefinder")
+        print("To install the module execute pipx install corefinder")
+        exit(0)
 
     # Get all details from json
     with open("app/details.json") as jsonobj:
