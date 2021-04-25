@@ -50,8 +50,8 @@ def main():
         exit(0)
 
     if "--help" in sys.argv[1:]:
-        print("To run the module execute pipx run corefinder")
-        print("To install the module execute pipx install corefinder")
+        print("To install the module run pip install --user corefinder")
+        print("To execute the package run corefinder")
         exit(0)
 
     print(card(my_data, work_exp))

@@ -1,2 +1,5 @@
 .idea/
 Pipfile.lock
+build/
+corefinder.egg-info/
+dist/
