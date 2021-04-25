@@ -16,7 +16,7 @@ def card(json_obj, work_ex):
                \   .P q.   a|.b .f .Z%
                    .b .h  .E` # J: 2`     .         Name:               {json_obj.get("attributes").
                                                                             get("personal_details").get("name")}
-              .,.a .E  ,L.M'  ?:b `| ..J9!`.,       aka:                {json_obj.get("attributes").
+              .,.a .E  ,L.M'  ?:b `| ..J9!`.,       Aka:                {json_obj.get("attributes").
                                                                             get("personal_details").get("also_known_as")}
                q,.h.M`   `..,   ..,""` ..2"`
                .M, J8`   `:       `   3;            Designation:        {json_obj.get("attributes").get("profile").
