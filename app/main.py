@@ -6,7 +6,7 @@ from app.card import card
 
 
 def main():
-    __version__ = "1.0.0"
+    __version__ = "1.0.1"
     career_start_date = datetime.strptime("2014-12-11", "%Y-%m-%d")
     career_continue_date = datetime.now().strftime("%Y-%m-%d")
     career_continue_date = datetime.strptime(career_continue_date, "%Y-%m-%d")
@@ -20,6 +20,31 @@ def main():
     # Get the total work experience
     work_exp = f"{num_years} years and {num_months} months"
 
+    my_data = {
+        "attributes": {
+            "profile": {
+                "current_designation": "Senior software qa engineer (automation)",
+                "organization": "Encora Inc.",
+                "working_from": "November, 2020 - till date",
+                "ex_organization": "Synup | Equifax | Automatad | Srijan",
+                "linkedin_profile": "https://www.linkedin.com/in/soumyajit-basu-5a783886/",
+                "github_profile": "https://github.com/Corefinder89",
+                "bitbucket_profile": "https://bitbucket.org/CodersDen/"
+            },
+            "education": {
+                "highest_degree": "Post graduation (MSc. computer applications)",
+                "university": "Symbiosis International University (Deemed)"
+            },
+            "personal_details": {
+                "name": "Soumyajit Basu",
+                "also_known_as": "corefinder",
+                "email": "soumyajit.basu62@gmail.com",
+                "current_location": "Bengaluru, karnataka",
+                "zip_code": 560078
+            }
+        }
+    }
+
     if "--version" in sys.argv[1:]:
         print(__version__)
         exit(0)
@@ -29,11 +54,7 @@ def main():
         print("To install the module execute pipx install corefinder")
         exit(0)
 
-    # Get all details from json
-    with open("app/details.json") as jsonobj:
-        json_data = json.load(jsonobj)
-
-    print(card(json_data, work_exp))
+    print(card(my_data, work_exp))
 
 
 if __name__ == '__main__':
