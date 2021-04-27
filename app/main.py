@@ -51,6 +51,7 @@ def main():
     if "--help" in sys.argv[1:]:
         print("To install the module run pip install --user corefinder")
         print("To execute the package run corefinder")
+        print("To check for the version number please run corefinder --version")
         exit(0)
 
     print(card(my_data, work_exp))
