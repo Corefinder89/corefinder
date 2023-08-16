@@ -44,10 +44,10 @@ def card(json_obj, work_ex):
                                                                             get("personal_details").get("email")}
                         J9Ksaw0"'                   Currently located:  {json_obj.get("attributes").
                                                                             get("personal_details").get("current_location")}
-                       .EJ?A...a.                   Zip code:           {json_obj.get("attributes").
-                                                                            get("personal_details").get("zip_code")}
-                       q...g...gi
-                      .m...qa..,y:
+                       .EJ?A...a.                   Zip code current:   {json_obj.get("attributes").
+                                                                            get("personal_details").get("zip_code_current")}
+                       q...g...gi                   Permanent location: {json_obj.get("attributes").get("personal_details").get("permanent_location")}
+                      .m...qa..,y:                  Zip code permanent: {json_obj.get("attributes").get("personal_details").get("zip_code_permanent")}
                       .HQFNB&...mm
                        ,Z|,m.a.,dp
                     .,?f` ,E?:"^7b

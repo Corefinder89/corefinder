@@ -5,7 +5,7 @@ from app.card import card
 
 
 def main():
-    __version__ = "1.1.5"
+    __version__ = "1.1.6"
     career_start_date = datetime.strptime("2014-12-11", "%Y-%m-%d")
     career_continue_date = datetime.now().strftime("%Y-%m-%d")
     career_continue_date = datetime.strptime(career_continue_date, "%Y-%m-%d")
@@ -38,8 +38,10 @@ def main():
                 "name": "Soumyajit Basu",
                 "also_known_as": "corefinder",
                 "email": "soumyajit.basu62@gmail.com",
-                "current_location": "Bengaluru, karnataka",
-                "zip_code": 560078
+                "current_location": "Bengaluru, Karnataka",
+                "zip_code_current": 560078,
+                "permanent_location": "Kolkata, West Bengal",
+                "zip_code_permanent": 700048
             }
         }
     }
