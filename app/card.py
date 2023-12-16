@@ -48,7 +48,7 @@ def card(json_obj, work_ex):
                                                                             get("personal_details").get("zip_code_current")}
                        q...g...gi                   Permanent location: {json_obj.get("attributes").get("personal_details").get("permanent_location")}
                       .m...qa..,y:                  Zip code permanent: {json_obj.get("attributes").get("personal_details").get("zip_code_permanent")}
-                      .HQFNB&...mm
+                      .HQFNB&...mm                  Blood group: {json_obj.get("attributes").get("personal_details").get("blood_group")}
                        ,Z|,m.a.,dp
                     .,?f` ,E?:"^7b
                     `A| . .F^^7'^4,

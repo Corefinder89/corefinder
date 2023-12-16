@@ -41,7 +41,8 @@ def main():
                 "current_location": "Bengaluru, Karnataka",
                 "zip_code_current": 560078,
                 "permanent_location": "Kolkata, West Bengal",
-                "zip_code_permanent": 700048
+                "zip_code_permanent": 700048,
+                "blood_group": "B-"
             }
         }
     }
