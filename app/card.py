@@ -5,6 +5,7 @@ def card(json_obj, work_ex):
     phrase = "Soumyajit"
     topbar = "-" * len(phrase)
     bottombar = "-" * len(phrase)
+
     output = dedent(
         f"""
         {topbar}
@@ -49,14 +50,26 @@ def card(json_obj, work_ex):
                        q...g...gi                   Permanent location: {json_obj.get("attributes").get("personal_details").get("permanent_location")}
                       .m...qa..,y:                  Zip code permanent: {json_obj.get("attributes").get("personal_details").get("zip_code_permanent")}
                       .HQFNB&...mm                  Blood group: {json_obj.get("attributes").get("personal_details").get("blood_group")}
-                       ,Z|,m.a.,dp
-                    .,?f` ,E?:"^7b
-                    `A| . .F^^7'^4,
-                     .MMMMMMMMMMMQzna,
-                 ...f"A.JdT     J:    Jp,
-                  `JNa..........A....af`
-                       `^^^^^'`
+                       ,Z|,m.a.,dp                  
+                    .,?f` ,E?:"^7b                  Certifications:
+                    `A| . .F^^7'^4,                  - {json_obj.get("attributes").get("certifications").get("certification-1").get("certification_name")}  
+                     .MMMMMMMMMMMQzna,                 {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_by")}
+                 ...f"A.JdT     J:    Jp,              {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_date")}
+                  `JNa..........A....af`             - {json_obj.get("attributes").get("certifications").get("certification-2").get("certification_name")}
+                       `^^^^^'`                        {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_by")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_date")}       
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("credentials")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("link")}
+                                                     - {json_obj.get("attributes").get("certifications").get("certification-3").get("certification_name")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_by")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_date")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("credentials")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("link")}
+                                                     - {json_obj.get("attributes").get("certifications").get("certification-4").get("certification_name")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_by")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_date")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("credentials")}
+                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("link")}
         """
     )
-
     return output

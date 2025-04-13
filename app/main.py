@@ -5,7 +5,7 @@ from app.card import card
 
 
 def main():
-    __version__ = "1.1.6"
+    __version__ = "1.1.7"
     career_start_date = datetime.strptime("2014-12-11", "%Y-%m-%d")
     career_continue_date = datetime.now().strftime("%Y-%m-%d")
     career_continue_date = datetime.strptime(career_continue_date, "%Y-%m-%d")
@@ -33,6 +33,36 @@ def main():
             "education": {
                 "highest_degree": "Post graduation (MSc. computer applications)",
                 "university": "Symbiosis International University (Deemed)"
+            },
+            "certifications": {
+                "certification-1": {
+                    "certification_name": "QA Infra workshop",
+                    "issued_by": "The Test Tribe",
+                    "issued_date": "November, 2024",
+                    "credentials": "none",
+                    "link": "none"
+                },
+                "certification-2": {
+                    "certification_name": "Post Graduate Program in DevOps",
+                    "issued_by": "Simplilearn",
+                    "issued_date": "January, 2022",
+                    "credentials": 45341790,
+                    "link": "https://success.simplilearn.com/3bfa2dd8-1710-42d3-90bc-1ca3c1a3458e#acc.vMisnA7j",
+                },
+                "certification-3": {
+                    "certification_name": "Backend API testing using python",
+                    "issued_by": "Udemy",
+                    "issued_date": "April, 2018",
+                    "credentials": "UC-N7XQAPSW",
+                    "link": "https://www.udemy.com/certificate/UC-N7XQAPSW/"
+                },
+                "certification-4": {
+                    "certification_name": "Selenium WebDriver with Python 3.x from novice to ninja",
+                    "issued_by": "Udemy",
+                    "issued_date": "July, 2017",
+                    "credentials": "UC-VB821J3L",
+                    "link": "https://www.udemy.com/certificate/UC-VB821J3L/"
+                }
             },
             "personal_details": {
                 "name": "Soumyajit Basu",
