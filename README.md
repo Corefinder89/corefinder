@@ -537,19 +537,19 @@ The repository includes a GitHub Actions workflow that automatically generates c
    ```
 
 5. **Repository Dispatch (API):**
-   ```bash
-   curl -X POST \
+   ```bash curl -X POST \
      -H "Accept: application/vnd.github.v3+json" \
-     -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     -H "Authorization: token <YOUR_GITHUB_TOKEN>" \
      https://api.github.com/repos/Corefinder89/corefinder/actions/workflows/changelog.yml/dispatches \
      -d '{"ref":"master","inputs":{"version":"v1.2.7"}}'
+  
    ```
 
 6. **External Systems (Repository Dispatch):**
    ```bash
    curl -X POST \
      -H "Accept: application/vnd.github.v3+json" \
-     -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     -H "Authorization: token <YOUR_GITHUB_TOKEN>" \
      https://api.github.com/repos/Corefinder89/corefinder/dispatches \
      -d '{"event_type":"changelog-update","client_payload":{"version":"v1.2.7"}}'
    ```
