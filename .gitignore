@@ -3,3 +3,4 @@ Pipfile.lock
 build/
 corefinder.egg-info/
 dist/
+ app/__pycache__/
