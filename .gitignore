@@ -7,3 +7,4 @@ dist/
  .venv/
  __pycache__/
 *.pyc
+url_shortener.db
