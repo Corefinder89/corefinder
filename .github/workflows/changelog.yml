@@ -4,8 +4,9 @@ on:
   push:
     tags:
       - 'v*'
-<<<<<<< HEAD
-=======
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       version:
@@ -13,7 +14,8 @@ on:
         required: true
         default: 'v1.2.7'
         type: string
->>>>>>> master
+  repository_dispatch:
+    types: [changelog-update]
 
 jobs:
   changelog:
@@ -29,14 +31,30 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           output: CHANGELOG.md
           
+      - name: Determine trigger context
+        id: context
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "commit_msg=Update changelog for ${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            echo "commit_msg=Update changelog for ${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "version=PR-${{ github.event.number }}" >> $GITHUB_OUTPUT
+            echo "commit_msg=Update changelog for PR #${{ github.event.number }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            echo "version=${{ github.event.client_payload.version || 'latest' }}" >> $GITHUB_OUTPUT
+            echo "commit_msg=Update changelog via repository dispatch" >> $GITHUB_OUTPUT
+          else
+            echo "version=unknown" >> $GITHUB_OUTPUT
+            echo "commit_msg=Update changelog" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit changelog
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "soumyajit.basu1988@outlook.com"
+          git config --local user.name "Corefinder89"
           git add CHANGELOG.md
-<<<<<<< HEAD
-          git commit -m "Update changelog for ${{ github.ref_name }}" || exit 0
-=======
-          git commit -m "Update changelog for ${{ github.event.inputs.version || github.ref_name }}" || exit 0
->>>>>>> master
+          git commit -m "${{ steps.context.outputs.commit_msg }}" || exit 0
           git push

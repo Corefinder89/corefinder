@@ -503,6 +503,57 @@ If you find this project useful, please consider:
 - 🤝 **Contributing** to the codebase
 - 📢 **Sharing** with others
 
+## 🤖 Automated Workflows
+
+### Changelog Generation
+
+The repository includes a GitHub Actions workflow that automatically generates changelogs. It can be triggered in multiple ways:
+
+#### 🔄 **Automatic Triggers:**
+
+1. **Tag Push (Release):**
+   ```bash
+   git tag -a v1.2.7 -m "Version 1.2.7"
+   git push origin v1.2.7  # Triggers changelog generation
+   ```
+
+2. **Pull Request to Master:**
+   - Automatically runs when PRs are opened, updated, or reopened against master branch
+   - Generates changelog preview for the PR
+   - Helps reviewers see what changes will be included
+
+#### 🖱️ **Manual Triggers:**
+
+3. **GitHub Web Interface:**
+   - Go to: `https://github.com/Corefinder89/corefinder/actions`
+   - Select **"Generate Changelog"** workflow
+   - Click **"Run workflow"** button
+   - Enter version tag (e.g., `v1.2.7`)
+   - Click **"Run workflow"**
+
+4. **GitHub CLI:**
+   ```bash
+   gh workflow run changelog.yml -f version=v1.2.7
+   ```
+
+5. **Repository Dispatch (API):**
+   ```bash
+   curl -X POST \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     https://api.github.com/repos/Corefinder89/corefinder/actions/workflows/changelog.yml/dispatches \
+     -d '{"ref":"master","inputs":{"version":"v1.2.7"}}'
+   ```
+
+6. **External Systems (Repository Dispatch):**
+   ```bash
+   curl -X POST \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     https://api.github.com/repos/Corefinder89/corefinder/dispatches \
+     -d '{"event_type":"changelog-update","client_payload":{"version":"v1.2.7"}}'
+   ```
+
 ## 📝 Changelog
 
 ### Version 1.2.7 (2025-10-02)
