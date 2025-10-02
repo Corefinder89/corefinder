@@ -503,6 +503,23 @@ If you find this project useful, please consider:
 - 🤝 **Contributing** to the codebase
 - 📢 **Sharing** with others
 
+## 📝 Changelog
+
+### Version 1.2.7 (2025-10-02)
+- ✨ **Added Smart URL Shortening** with cf.link branding
+- 🔗 **Terminal Hyperlinks** for clickable URLs in modern terminals
+- 📊 **Progress Bar Interface** with real-time countdown
+- 🔄 **Daemon Mode** for persistent server operation
+- 🌐 **HTTP Server** with automatic port fallback
+- 📚 **Enhanced Documentation** with architecture overview
+
+### Version 1.1.7
+- 🎨 Initial ASCII art business card display
+- 💻 Basic CLI interface with help and version flags
+- 📋 Personal and professional information display
+
+**Full Changelog**: [CHANGELOG.md](CHANGELOG.md)
+
 ---
 
 *Made with ❤️ by [Soumyajit Basu](https://github.com/Corefinder89)*
