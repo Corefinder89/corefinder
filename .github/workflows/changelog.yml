@@ -4,6 +4,16 @@ on:
   push:
     tags:
       - 'v*'
+<<<<<<< HEAD
+=======
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v1.2.7)'
+        required: true
+        default: 'v1.2.7'
+        type: string
+>>>>>>> master
 
 jobs:
   changelog:
@@ -24,5 +34,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add CHANGELOG.md
+<<<<<<< HEAD
           git commit -m "Update changelog for ${{ github.ref_name }}" || exit 0
+=======
+          git commit -m "Update changelog for ${{ github.event.inputs.version || github.ref_name }}" || exit 0
+>>>>>>> master
           git push
