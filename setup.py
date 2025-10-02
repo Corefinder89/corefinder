@@ -5,7 +5,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name="corefinder",
-    version="1.1.7",
+    version="1.2.7",
     author="Soumyajit Basu",
     author_email="soumyajit.basu62@gmail.com",
     description="A module for my digital business card",
