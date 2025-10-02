@@ -1,20 +1,249 @@
-# My Digital Business card
+# Corefinder - Digital Business Card 🎨
 
-Creating a digital business card for myself so that it can be used to give my digital information over the internet.
-Developed in python. The card would look like this:
+A Python CLI application that generates a beautiful ASCII art digital business card displaying personal and professional information.
 
-![image](image/calvin.png)
+![Digital Business Card Preview](image/calvin.png)
 
-To see my digital profile just run the command:
+## 📋 Project Overview
 
-`pip install --user corefinder`
+- **Type**: Python CLI Package
+- **Purpose**: Digital business card generator with ASCII art display
+- **Author**: Soumyajit Basu
+- **Version**: 1.1.7
+- **License**: MIT
 
+## 🚀 Quick Start
 
-To get help run this command:
+### Method 1: Direct Python Execution (Recommended for Development)
 
-`corefinder --help`
+```bash
+# Navigate to project directory
+cd corefinder
 
+# Run directly as Python module
+python -m app
+```
 
-To get version run this command:
+### Method 2: Install as CLI Package
 
-`corefinder --version`
+```bash
+# Install from PyPI (published version)
+pip install --user corefinder
+
+# Or install in development mode (local changes)
+pip install -e .
+
+# Run using CLI command
+corefinder
+```
+
+## 🛠️ Development Setup
+
+### Prerequisites
+- Python 3.6 or higher
+- pip package manager
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Corefinder89/corefinder.git
+   cd corefinder
+   ```
+
+2. **Set up virtual environment (recommended)**
+   ```bash
+   python -m venv .venv
+   
+   # Windows
+   .venv\Scripts\activate
+   
+   # macOS/Linux
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   # Using pip
+   pip install -e .
+   
+   # Or using pipenv
+   pipenv install
+   ```
+
+4. **Run the application**
+   ```bash
+   # Method 1: Direct module execution
+   python -m app
+   
+   # Method 2: After installation
+   corefinder
+   ```
+
+## � Building the Project
+
+### Rebuild After Changes (Development)
+
+When you make changes to the code, you need to rebuild the project to see your updates:
+
+#### Method 1: Quick Development Rebuild
+```bash
+# Reinstall in development mode (picks up code changes instantly)
+pip install -e . --force-reinstall
+
+# Test your changes
+corefinder
+```
+
+#### Method 2: Clean Rebuild
+```bash
+# Uninstall existing version
+pip uninstall corefinder
+
+# Clean previous builds
+rm -rf build/ dist/ *.egg-info/  # Linux/macOS
+# or on Windows:
+rmdir /s build dist
+rmdir /s corefinder.egg-info
+
+# Reinstall fresh
+pip install -e .
+```
+
+#### Method 3: Direct Module Execution (No Build Required)
+```bash
+# Run directly without installation (good for quick testing)
+python -m app
+```
+
+### 📦 Building for Distribution
+
+#### Build Package
+```bash
+# Using makefile (recommended)
+make build
+
+# Or manually
+python -m pip install --upgrade setuptools wheel twine
+python setup.py sdist bdist_wheel
+```
+
+#### Publish to PyPI
+```bash
+# Using makefile
+make publish
+
+# Or manually
+python -m twine check dist/*
+python -m twine upload dist/*
+```
+
+### 🔄 Development Workflow
+
+1. **Make your changes** to the code
+2. **Test quickly**: `python -m app`
+3. **Rebuild package**: `pip install -e . --force-reinstall`
+4. **Test CLI**: `corefinder`
+5. **Build for distribution**: `make build` (when ready to release)
+
+## 💻 CLI Commands
+
+```bash
+# Display digital business card
+corefinder
+
+# Show help information
+corefinder --help
+
+# Show version information
+corefinder --version
+```
+
+## 🏗️ Project Structure
+
+```
+corefinder/
+├── app/
+│   ├── __init__.py
+│   ├── __main__.py          # Entry point for module execution
+│   ├── main.py              # Main application logic
+│   ├── card.py              # ASCII art card generator
+│   └── url_shortener.py     # URL shortener functionality (WIP)
+├── image/
+│   └── calvin.png           # Preview image
+├── corefinder.egg-info/     # Package metadata
+├── setup.py                 # Package configuration
+├── pyproject.toml           # Build system requirements
+├── Pipfile                  # Pipenv dependencies
+├── makefile                 # Build automation
+└── README.md                # This file
+```
+
+## 🎯 Features
+
+- **ASCII Art Display**: Beautiful terminal-based business card
+- **Personal Information**: Name, designation, contact details
+- **Professional Details**: Current organization, experience, certifications
+- **Social Links**: LinkedIn, GitHub, Bitbucket profiles
+- **Educational Background**: Degrees and certifications
+- **CLI Interface**: Easy command-line access
+
+## 🔧 Technical Details
+
+- **Language**: Python 3.6+
+- **Package Type**: Console script with entry point
+- **Distribution**: PyPI package
+- **Build System**: setuptools with wheel support
+- **Dependencies**: Minimal (only standard library)
+
+## 🌟 Output Example
+
+The application generates a detailed ASCII art business card showing:
+- Personal details (name, location, contact)
+- Professional information (current role, experience)
+- Educational background
+- Certifications and achievements
+- Social media profiles
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### `subprocess-exited-with-error` during `pip install -e .`
+If you encounter a `UnicodeDecodeError` when running `pip install -e .`, this is typically due to encoding issues when reading files with Unicode characters (emojis, special characters).
+
+**Solution**: Ensure `setup.py` reads files with UTF-8 encoding:
+```python
+with open('README.md', encoding='utf-8') as f:
+    long_description = f.read()
+```
+
+#### Module not found errors
+Make sure you're in the correct directory and have activated your virtual environment:
+```bash
+cd corefinder
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Contact
+
+- **Author**: Soumyajit Basu
+- **Email**: soumyajit.basu62@gmail.com
+- **LinkedIn**: [soumyajit-basu-5a783886](https://www.linkedin.com/in/soumyajit-basu-5a783886/)
+- **GitHub**: [Corefinder89](https://github.com/Corefinder89)
+
+---
+
+⭐ **Star this repo if you find it useful!**
