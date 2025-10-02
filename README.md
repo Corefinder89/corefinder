@@ -80,11 +80,47 @@ corefinder
    corefinder
    ```
 
-## 📦 Building and Distribution
+## � Building the Project
 
-### Build Package
+### Rebuild After Changes (Development)
+
+When you make changes to the code, you need to rebuild the project to see your updates:
+
+#### Method 1: Quick Development Rebuild
 ```bash
-# Using makefile
+# Reinstall in development mode (picks up code changes instantly)
+pip install -e . --force-reinstall
+
+# Test your changes
+corefinder
+```
+
+#### Method 2: Clean Rebuild
+```bash
+# Uninstall existing version
+pip uninstall corefinder
+
+# Clean previous builds
+rm -rf build/ dist/ *.egg-info/  # Linux/macOS
+# or on Windows:
+rmdir /s build dist
+rmdir /s corefinder.egg-info
+
+# Reinstall fresh
+pip install -e .
+```
+
+#### Method 3: Direct Module Execution (No Build Required)
+```bash
+# Run directly without installation (good for quick testing)
+python -m app
+```
+
+### 📦 Building for Distribution
+
+#### Build Package
+```bash
+# Using makefile (recommended)
 make build
 
 # Or manually
@@ -92,11 +128,23 @@ python -m pip install --upgrade setuptools wheel twine
 python setup.py sdist bdist_wheel
 ```
 
-### Publish to PyPI
+#### Publish to PyPI
 ```bash
+# Using makefile
 make publish
-# Or manually: python -m twine upload dist/*
+
+# Or manually
+python -m twine check dist/*
+python -m twine upload dist/*
 ```
+
+### 🔄 Development Workflow
+
+1. **Make your changes** to the code
+2. **Test quickly**: `python -m app`
+3. **Rebuild package**: `pip install -e . --force-reinstall`
+4. **Test CLI**: `corefinder`
+5. **Build for distribution**: `make build` (when ready to release)
 
 ## 💻 CLI Commands
 
