@@ -3,3 +3,7 @@ Pipfile.lock
 build/
 corefinder.egg-info/
 dist/
+ app/__pycache__/
+ .venv/
+ __pycache__/
+*.pyc

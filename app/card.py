@@ -52,24 +52,24 @@ def card(json_obj, work_ex):
                       .HQFNB&...mm                  Blood group: {json_obj.get("attributes").get("personal_details").get("blood_group")}
                        ,Z|,m.a.,dp                  
                     .,?f` ,E?:"^7b                  Certifications:
-                    `A| . .F^^7'^4,                  - {json_obj.get("attributes").get("certifications").get("certification-1").get("certification_name")}  
-                     .MMMMMMMMMMMQzna,                 {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_by")}
-                 ...f"A.JdT     J:    Jp,              {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_date")}
-                  `JNa..........A....af`             - {json_obj.get("attributes").get("certifications").get("certification-2").get("certification_name")}
-                       `^^^^^'`                        {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_by")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_date")}       
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("credentials")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("link")}
-                                                     - {json_obj.get("attributes").get("certifications").get("certification-3").get("certification_name")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_by")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_date")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("credentials")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-3").get("link")}
-                                                     - {json_obj.get("attributes").get("certifications").get("certification-4").get("certification_name")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_by")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_date")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("credentials")}
-                                                       {json_obj.get("attributes").get("certifications").get("certification-2").get("link")}
+                    `A| . .F^^7'^4,                  Name: {json_obj.get("attributes").get("certifications").get("certification-1").get("certification_name")}  
+                     .MMMMMMMMMMMQzna,               Issuer: {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_by")}
+                 ...f"A.JdT     J:    Jp,            Issue date: {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_date")}\n
+                  `JNa..........A....af`             Name: {json_obj.get("attributes").get("certifications").get("certification-2").get("certification_name")}
+                       `^^^^^'`                      Issuer: {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_by")}
+                                                     Issue date: {json_obj.get("attributes").get("certifications").get("certification-2").get("issued_date")}       
+                                                     Credentials: {json_obj.get("attributes").get("certifications").get("certification-2").get("credentials")}
+                                                     Link: {json_obj.get("attributes").get("certifications").get("certification-2").get("link")}\n
+                                                     Name: {json_obj.get("attributes").get("certifications").get("certification-3").get("certification_name")}
+                                                     Issuer: {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_by")}
+                                                     Issue date: {json_obj.get("attributes").get("certifications").get("certification-3").get("issued_date")}
+                                                     Credentials: {json_obj.get("attributes").get("certifications").get("certification-3").get("credentials")}
+                                                     Link: {json_obj.get("attributes").get("certifications").get("certification-3").get("link")}\n
+                                                     Name: {json_obj.get("attributes").get("certifications").get("certification-4").get("certification_name")}
+                                                     Issuer: {json_obj.get("attributes").get("certifications").get("certification-4").get("issued_by")}
+                                                     Issue date: {json_obj.get("attributes").get("certifications").get("certification-4").get("issued_date")}
+                                                     Credentials: {json_obj.get("attributes").get("certifications").get("certification-4").get("credentials")}
+                                                     Link: {json_obj.get("attributes").get("certifications").get("certification-4").get("link")}
         """
     )
     return output
