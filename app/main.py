@@ -2,6 +2,7 @@ import sys
 from datetime import datetime
 
 from app.card import card
+from app.url_shortener import URLShortener
 
 
 def main():
@@ -26,9 +27,9 @@ def main():
                 "organization": "Encora Inc.",
                 "working_from": "November, 2020 - till date",
                 "ex_organization": "Synup | Equifax | Automatad | Srijan",
-                "linkedin_profile": "https://www.linkedin.com/in/soumyajit-basu-5a783886/",
-                "github_profile": "https://github.com/Corefinder89",
-                "bitbucket_profile": "https://bitbucket.org/CodersDen/"
+                "linkedin_profile": URLShortener().shorten_url("https://www.linkedin.com/in/soumyajit-basu/"),
+                "github_profile": URLShortener().shorten_url("https://github.com/Corefinder89"),
+                "bitbucket_profile": URLShortener().shorten_url("https://bitbucket.org/CodersDen/")
             },
             "education": {
                 "highest_degree": "Post graduation (MSc. computer applications)",
@@ -47,21 +48,21 @@ def main():
                     "issued_by": "Simplilearn",
                     "issued_date": "January, 2022",
                     "credentials": 45341790,
-                    "link": "https://success.simplilearn.com/3bfa2dd8-1710-42d3-90bc-1ca3c1a3458e#acc.vMisnA7j",
+                    "link": URLShortener().shorten_url("https://www.simplilearn.com/verify-certificate?certificate_code=45341790"),
                 },
                 "certification-3": {
                     "certification_name": "Backend API testing using python",
                     "issued_by": "Udemy",
                     "issued_date": "April, 2018",
                     "credentials": "UC-N7XQAPSW",
-                    "link": "https://www.udemy.com/certificate/UC-N7XQAPSW/"
+                    "link": URLShortener().shorten_url("https://www.udemy.com/certificate/UC-N7XQAPSW/")
                 },
                 "certification-4": {
                     "certification_name": "Selenium WebDriver with Python 3.x from novice to ninja",
                     "issued_by": "Udemy",
                     "issued_date": "July, 2017",
                     "credentials": "UC-VB821J3L",
-                    "link": "https://www.udemy.com/certificate/UC-VB821J3L/"
+                    "link": URLShortener().shorten_url("https://www.udemy.com/certificate/UC-VB821J3L/")
                 }
             },
             "personal_details": {
