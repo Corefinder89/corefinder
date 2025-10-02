@@ -20,16 +20,34 @@ on:
 jobs:
   changelog:
     runs-on: ubuntu-latest
+    # Skip workflow for PRs from forks to avoid permission issues
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
       
+      - name: Debug Git State
+        run: |
+          echo "Current git status:"
+          git status
+          echo "Current branch:"
+          git branch -a
+          echo "Current HEAD:"
+          git rev-parse HEAD
+          echo "Event name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Ref name: ${{ github.ref_name }}"
+          echo "Head ref: ${{ github.head_ref }}"
+
       - name: Generate changelog
         uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           output: CHANGELOG.md
+        continue-on-error: true
           
       - name: Determine trigger context
         id: context
@@ -51,10 +69,59 @@ jobs:
             echo "commit_msg=Update changelog" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit changelog
+      - name: Setup Git and determine branch
+        id: git-setup
         run: |
           git config --local user.email "soumyajit.basu1988@outlook.com"
           git config --local user.name "Corefinder89"
+          
+          # Determine the target branch based on event type
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BRANCH="${{ github.head_ref }}"
+            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            echo "push_to=origin $BRANCH" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "push" && "${{ github.ref_type }}" == "tag" ]]; then
+            # For tag pushes, we want to update the default branch
+            BRANCH="master"
+            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            echo "push_to=origin $BRANCH" >> $GITHUB_OUTPUT
+            git checkout -b temp-changelog-update
+            git fetch origin $BRANCH
+            git checkout $BRANCH
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            # For manual dispatch, use the current branch or master
+            BRANCH="${{ github.ref_name }}"
+            if [[ "$BRANCH" == "master" ]]; then
+              echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+              echo "push_to=origin $BRANCH" >> $GITHUB_OUTPUT
+              git checkout $BRANCH
+            else
+              echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+              echo "push_to=origin $BRANCH" >> $GITHUB_OUTPUT
+              git checkout -b $BRANCH 2>/dev/null || git checkout $BRANCH
+            fi
+          else
+            # Default to master branch
+            BRANCH="master"
+            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            echo "push_to=origin $BRANCH" >> $GITHUB_OUTPUT
+            git checkout -b temp-changelog-update
+            git fetch origin $BRANCH
+            git checkout $BRANCH
+          fi
+          
+          echo "Working on branch: $BRANCH"
+
+      - name: Commit and push changelog
+        run: |
+          # Check if there are any changes to commit
+          if git diff --staged --quiet && git diff --quiet CHANGELOG.md; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
           git add CHANGELOG.md
           git commit -m "${{ steps.context.outputs.commit_msg }}" || exit 0
-          git push
+          
+          # Push using the determined branch and method
+          git push ${{ steps.git-setup.outputs.push_to }}
