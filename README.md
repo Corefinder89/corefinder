@@ -118,25 +118,68 @@ python -m app
 
 ### 📦 Building for Distribution
 
-#### Build Package
+#### Using Makefile
+
+The project includes a `makefile` for automated building and publishing.
+
+**On Unix/Linux/macOS:**
 ```bash
-# Using makefile (recommended)
+# Clean previous builds
+make clean
+
+# Build package
 make build
 
-# Or manually
-python -m pip install --upgrade setuptools wheel twine
-python setup.py sdist bdist_wheel
+# Publish to PyPI
+make publish
 ```
 
-#### Publish to PyPI
-```bash
-# Using makefile
-make publish
+**On Windows PowerShell:**
 
-# Or manually
+Since PowerShell doesn't have built-in `make` support, you can either:
+
+1. **Install GNU Make for Windows:**
+   ```powershell
+   # Via Chocolatey
+   choco install make
+   
+   # Via winget
+   winget install GnuWin32.Make
+   
+   # Then use normally
+   make build
+   make clean
+   make publish
+   ```
+
+2. **Run commands directly (recommended):**
+   ```powershell
+   # Clean previous builds
+   Remove-Item -Path build, dist, *.egg-info -Recurse -Force -ErrorAction SilentlyContinue
+   
+   # Build package (modern approach)
+   python -m pip install --upgrade build
+   python -m build
+   
+   # Publish to PyPI
+   python -m twine check dist/*
+   python -m twine upload dist/*
+   ```
+
+#### Manual Build (Alternative)
+```bash
+# Install build dependencies
+python -m pip install --upgrade setuptools wheel twine
+
+# Build package (deprecated method)
+python setup.py sdist bdist_wheel
+
+# Check and publish
 python -m twine check dist/*
 python -m twine upload dist/*
 ```
+
+**Note:** The `python setup.py` method is deprecated. Use `python -m build` for modern package building.
 
 ### 🔄 Development Workflow
 
@@ -223,6 +266,24 @@ Make sure you're in the correct directory and have activated your virtual enviro
 ```bash
 cd corefinder
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+```
+
+#### `No module named 'twine'` when publishing
+If you encounter `ModuleNotFoundError: No module named 'twine'` when trying to publish or check packages, you need to install twine first:
+
+```bash
+# Install twine for package publishing
+python -m pip install twine
+
+# Then you can use twine commands
+python -m twine check dist/*
+python -m twine upload dist/*
+```
+
+**Alternative**: Use the makefile which automatically installs dependencies:
+```bash
+make build  # This installs setuptools, wheel, and twine automatically
+make publish
 ```
 
 ## 🤝 Contributing
