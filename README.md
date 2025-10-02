@@ -138,6 +138,88 @@ python -m twine check dist/*
 python -m twine upload dist/*
 ```
 
+#### Create GitHub Tags & Releases
+
+**Create and Push Tags:**
+```bash
+# Create an annotated tag (recommended for releases)
+git tag -a v1.2.7 -m "Version 1.2.7 - Interactive URL Shortener with Smart URL Shortening"
+
+# Push the tag to GitHub
+git push origin v1.2.7
+
+# Or push all tags at once
+git push origin --tags
+```
+
+**Create Lightweight Tag:**
+```bash
+# Create lightweight tag (just a pointer to a commit)
+git tag v1.2.7
+
+# Push to GitHub
+git push origin v1.2.7
+```
+
+**GitHub Web Interface:**
+
+1. Go to your repository: `https://github.com/Corefinder89/corefinder`
+2. Click **"Releases"** tab
+3. Click **"Create a new release"**
+4. Fill in:
+   - **Tag version**: `v1.2.7` (or "Choose a tag" if already created)
+   - **Release title**: `Version 1.2.7 - Interactive URL Shortener`
+   - **Description**: Copy content from [CHANGELOG.md](CHANGELOG.md)
+5. Click **"Publish release"**
+
+**Tag Management:**
+```bash
+# List all tags
+git tag
+
+# Delete a local tag
+git tag -d v1.2.7
+
+# Delete a remote tag
+git push origin --delete v1.2.7
+
+# View tag details
+git show v1.2.7
+```
+
+**Automated Changelog Generation:**
+
+The repository includes a GitHub Actions workflow that automatically generates changelogs. You can trigger it in several ways:
+
+1. **Automatic (when pushing tags):**
+   ```bash
+   git tag -a v1.2.7 -m "Version 1.2.7"
+   git push origin v1.2.7  # This triggers the workflow automatically
+   ```
+
+2. **Manual Trigger via GitHub Web Interface:**
+   - Go to your repository: `https://github.com/Corefinder89/corefinder`
+   - Click **"Actions"** tab
+   - Select **"Generate Changelog"** workflow
+   - Click **"Run workflow"** button
+   - Enter the version tag (e.g., `v1.2.7`)
+   - Click **"Run workflow"**
+
+3. **Manual Trigger via GitHub CLI:**
+   ```bash
+   # Install GitHub CLI first: https://cli.github.com/
+   gh workflow run changelog.yml -f version=v1.2.7
+   ```
+
+4. **Manual Trigger via API:**
+   ```bash
+   curl -X POST \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     https://api.github.com/repos/Corefinder89/corefinder/actions/workflows/changelog.yml/dispatches \
+     -d '{"ref":"master","inputs":{"version":"v1.2.7"}}'
+   ```
+
 ### 🔄 Development Workflow
 
 1. **Make your changes** to the code
