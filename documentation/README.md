@@ -1,5 +1,5 @@
 ---
-layout: mermaid
+layout: default
 title: Project Documentation
 description: Interactive Digital Business Card with URL Shortening
 nav_order: 1
@@ -581,3 +581,69 @@ The repository includes a GitHub Actions workflow that automatically generates c
 ---
 
 *Made with ❤️ by [Soumyajit Basu](https://github.com/Corefinder89)*
+
+<!-- Mermaid.js Configuration -->
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0366d6',
+                primaryTextColor: '#24292e',
+                primaryBorderColor: '#d1d5da',
+                lineColor: '#586069',
+                secondaryColor: '#f6f8fa',
+                tertiaryColor: '#ffffff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+        
+        // Initialize all mermaid diagrams
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    } else {
+        console.log('Mermaid library not loaded - diagrams will display as text');
+    }
+});
+</script>
+
+<!-- Mermaid Diagram Styling -->
+<style>
+.mermaid {
+    text-align: center;
+    margin: 30px 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    overflow-x: auto;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mermaid {
+        padding: 15px;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+}
+
+/* Ensure diagrams don't break page layout */
+.mermaid * {
+    max-width: 100% !important;
+}
+</style>

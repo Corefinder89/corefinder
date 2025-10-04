@@ -1,5 +1,5 @@
 ---
-layout: mermaid
+layout: default
 title: Technical Documentation
 description: Comprehensive technical documentation for the URL shortening system
 nav_order: 2
@@ -172,7 +172,7 @@ If URL shortener fails to initialize:
 
 ### Visual Flow Diagram
 
-```mermaid
+<div class="mermaid">
 graph TB
     subgraph "URL Shortening Process"
         A[Original URL<br/>linkedin.com/profile] --> B[Short Code Generator<br/>a3Kx9P]
@@ -213,11 +213,11 @@ graph TB
     style O fill:#f1f8e9
     style P fill:#e8f5e8
     style Q fill:#fff8e1
-```
+</div>
 
 #### Sequence Diagram: Complete User Flow
 
-```mermaid
+<div class=mermaid"">
 sequenceDiagram
     participant U as User
     participant T as Terminal
@@ -237,7 +237,7 @@ sequenceDiagram
     B->>U: Opens linkedin.com/profile
     
     Note over U,D: User sees branded cf.link URL but gets redirected to actual destination
-```
+</div>
 
 ## Implementation Files
 
@@ -256,3 +256,82 @@ This elegant system provides professional branding while maintaining full functi
 - **Professional UX**: Branded URLs with full functionality
 - **Cross-Platform**: Works on Windows, macOS, and Linux
 
+<!-- Mermaid.js Configuration -->
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0366d6',
+                primaryTextColor: '#24292e',
+                primaryBorderColor: '#d1d5da',
+                lineColor: '#586069',
+                secondaryColor: '#f6f8fa',
+                tertiaryColor: '#ffffff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                diagramMarginX: 50,
+                diagramMarginY: 10,
+                actorMargin: 50,
+                width: 150,
+                height: 65,
+                boxMargin: 10,
+                boxTextMargin: 5,
+                noteMargin: 10,
+                messageMargin: 35,
+                mirrorActors: true,
+                bottomMarginAdj: 1,
+                useMaxWidth: true
+            }
+        });
+        
+        // Initialize all mermaid diagrams
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    } else {
+        console.log('Mermaid library not loaded - diagrams will display as text');
+    }
+});
+</script>
+
+<!-- Mermaid Diagram Styling -->
+<style>
+.mermaid {
+    text-align: center;
+    margin: 30px 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    overflow-x: auto;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mermaid {
+        padding: 15px;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+}
+
+/* Ensure diagrams don't break page layout */
+.mermaid * {
+    max-width: 100% !important;
+}
+</style>
