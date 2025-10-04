@@ -1,33 +1,106 @@
 # GitHub Pages Configuration
-title: "Corefinder URL Shortener Documentation"
-description: "Technical guide for the Corefinder URL shortening system"
+title: "Project Documentation"
+description: "Technical guide / Architecture overview"
 baseurl: "/corefinder"
 url: "https://corefinder89.github.io"
 
-# Theme
-theme: minima
-# Alternative themes: jekyll-theme-minimal, jekyll-theme-cayman, jekyll-theme-slate
+# Documentation Theme - Better for technical content
+remote_theme: pmarsceill/just-the-docs
+# Alternative: theme: jekyll-theme-cayman
+
+# Site settings
+author: "Soumyajit Basu (@Corefinder89)"
+repository: "Corefinder89/corefinder"
 
 # Markdown processor
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
 
-# Navigation
-header_pages:
-  - documentation/URL_SHORTENER.md
+# Navigation for just-the-docs theme
+nav_sort: case_insensitive
+nav_external_links:
+  - title: "GitHub Repository"
+    url: "https://github.com/Corefinder89/corefinder"
+  - title: "PyPI Package"
+    url: "https://pypi.org/project/corefinder/"
+
+# Search settings
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+
+# Table of contents
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3
+
+# Code highlighting
+highlighter: rouge
+color_scheme: light
+
+# Mermaid configuration for technical diagrams
+mermaid:
+  src: 'https://unpkg.com/mermaid@10/dist/mermaid.min.js'
+  config:
+    theme: 'default'
+    themeVariables:
+      primaryColor: '#0366d6'
+      primaryTextColor: '#24292e'
+      primaryBorderColor: '#d1d5da'
+      lineColor: '#586069'
+      secondaryColor: '#f6f8fa'
+      tertiaryColor: '#ffffff'
+    flowchart:
+      useMaxWidth: true
+      htmlLabels: true
+      curve: 'basis'
+    sequence:
+      useMaxWidth: true
+      actorMargin: 50
+      
+# Footer content
+footer_content: "Copyright &copy; 2025 Soumyajit Basu. Technical documentation for Corefinder URL Shortener."
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Show navigation on mobile
+aux_links_new_tab: true
+nav_external_links:
+  - title: "View on GitHub"
+    url: "https://github.com/Corefinder89/corefinder"
+    
+# Exclude files from processing
+exclude:
+  - node_modules/
+  - "*.gemspec"
+  - "*.gem"
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - script/
+  - LICENSE.txt
+  - lib/
+  - bin/
   - README.md
-
-# Show excerpts on homepage
-show_excerpts: true
-
-# GitHub repository info
-github:
-  repository_url: "https://github.com/Corefinder89/corefinder"
+  - Rakefile
