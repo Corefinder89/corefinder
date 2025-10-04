@@ -6,7 +6,7 @@
 
 A sophisticated Python CLI application that generates a beautiful ASCII art digital business card with interactive URL shortening and clickable hyperlinks.
 
-![Digital Business Card Preview](image/calvin.png)
+![Digital Business Card Preview](../image/calvin.png)
 
 ## � Key Features
 
