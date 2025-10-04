@@ -10,3 +10,5 @@ dist/
 url_shortener.db
 build/
 Code Citations.md
+.ruby-version
+Gemfile.lock
