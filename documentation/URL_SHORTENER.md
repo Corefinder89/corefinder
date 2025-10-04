@@ -5,7 +5,7 @@ description: Comprehensive technical documentation for the URL shortening system
 nav_order: 2
 ---
 
-# Corefinder URL Shortener - Technical Guide
+# URL Shortener - Technical Guide
 
 ## Overview
 
