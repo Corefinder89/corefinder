@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: mermaid
 title: Technical Documentation
 description: Comprehensive technical documentation for the URL shortening system
 nav_order: 2
@@ -255,3 +255,50 @@ This elegant system provides professional branding while maintaining full functi
 - **Graceful Degradation**: Works even if server fails to start
 - **Professional UX**: Branded URLs with full functionality
 - **Cross-Platform**: Works on Windows, macOS, and Linux
+
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0366d6',
+                primaryTextColor: '#24292e',
+                primaryBorderColor: '#d1d5da',
+                lineColor: '#586069',
+                secondaryColor: '#f6f8fa',
+                tertiaryColor: '#ffffff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+        
+        // Re-render all mermaid elements
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    } else {
+        console.log('Mermaid not loaded - diagrams will show as text');
+    }
+});
+</script>
+
+<style>
+.mermaid {
+    text-align: center;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+</style>
