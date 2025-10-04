@@ -1,0 +1,33 @@
+# GitHub Pages Configuration
+title: "Corefinder URL Shortener Documentation"
+description: "Technical guide for the Corefinder URL shortening system"
+baseurl: "/corefinder"
+url: "https://corefinder89.github.io"
+
+# Theme
+theme: minima
+# Alternative themes: jekyll-theme-minimal, jekyll-theme-cayman, jekyll-theme-slate
+
+# Markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - documentation/URL_SHORTENER.md
+  - README.md
+
+# Show excerpts on homepage
+show_excerpts: true
+
+# GitHub repository info
+github:
+  repository_url: "https://github.com/Corefinder89/corefinder"
