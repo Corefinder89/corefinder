@@ -1,5 +1,5 @@
 # GitHub Pages Configuration
-title: "'<img src=\"/assets/image/logo.svg\" alt=\"Project Logo\" width=\"24\" height=\"24\" style=\"vertical-align: middle; margin-right: 8px;\"> Corefinder Documentation'>Technical Documentation"
+title: "Technical Documentation"
 description: "Technical documentation / Architectural Overview"
 baseurl: "/corefinder"
 url: "https://corefinder89.github.io"
