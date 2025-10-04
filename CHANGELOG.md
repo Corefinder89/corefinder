@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- Add changes for theme [\#11](https://github.com/Corefinder89/corefinder/pull/11) ([Corefinder89](https://github.com/Corefinder89))
+- Documentation [\#10](https://github.com/Corefinder89/corefinder/pull/10) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#9](https://github.com/Corefinder89/corefinder/pull/9) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#8](https://github.com/Corefinder89/corefinder/pull/8) ([Corefinder89](https://github.com/Corefinder89))
 - Add changes to readme [\#7](https://github.com/Corefinder89/corefinder/pull/7) ([Corefinder89](https://github.com/Corefinder89))
