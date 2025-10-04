@@ -2,7 +2,7 @@
 layout: default
 title: Project Documentation
 description: Interactive Digital Business Card with URL Shortening
-nav_order: 1
+nav_order: 2
 ---
 
 # Corefinder - Interactive Digital Business Card 🎨
@@ -13,7 +13,7 @@ nav_order: 1
 
 A sophisticated Python CLI application that generates a beautiful ASCII art digital business card with interactive URL shortening and clickable hyperlinks.
 
-![Digital Business Card Preview](../image/calvin.png)
+![Digital Business Card Preview](../assets/image/calvin.png)
 
 ## � Key Features
 
@@ -116,7 +116,7 @@ corefinder/
 
 ### Technical Architecture
 
-![Technical Architecture Preview](../image/Tech_Arch.png)
+![Technical Architecture Preview](../assets/image/Tech_Arch.png)
 
 ## 🔧 Detailed Component Analysis
 

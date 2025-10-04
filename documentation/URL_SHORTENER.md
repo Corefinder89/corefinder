@@ -2,7 +2,7 @@
 layout: default
 title: Technical Documentation
 description: Comprehensive technical documentation for the URL shortening system
-nav_order: 2
+nav_order: 3
 ---
 
 # URL Shortener - Technical Guide
@@ -172,11 +172,11 @@ If URL shortener fails to initialize:
 
 ### Visual Flow Diagram
 
-![Workflow](../image/Workflow.png)
+![Workflow](../assets/image/Workflow.png)
 
 #### Sequence Diagram: Complete User Flow
 
-![SequenceDiagram](../image/SequenceDiagram.png)
+![SequenceDiagram](../assets/image/SequenceDiagram.png)
 
 ## Implementation Files
 

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Digital Business Card
+title: Overview
+nav_order: 1
 ---
 
 # Project Documentation
@@ -19,7 +20,7 @@ Comprehensive technical documentation covering:
 - Visual flow diagrams
 - Implementation details
 
-### [🚀 Main Project README](documentation/README.md)
+### [🚀 Main Project README](documentation/DETAILING.md)
 General project information, installation, and usage instructions.
 
 ---
