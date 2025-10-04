@@ -1,3 +1,10 @@
+---
+layout: mermaid
+title: Project Documentation
+description: Interactive Digital Business Card with URL Shortening
+nav_order: 1
+---
+
 # Corefinder - Interactive Digital Business Card 🎨
 
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://python.org)
@@ -574,3 +581,49 @@ The repository includes a GitHub Actions workflow that automatically generates c
 ---
 
 *Made with ❤️ by [Soumyajit Basu](https://github.com/Corefinder89)*
+
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0366d6',
+                primaryTextColor: '#24292e',
+                primaryBorderColor: '#d1d5da',
+                lineColor: '#586069',
+                secondaryColor: '#f6f8fa',
+                tertiaryColor: '#ffffff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+        
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    } else {
+        console.log('Mermaid not loaded - diagrams will show as text');
+    }
+});
+</script>
+
+<style>
+.mermaid {
+    text-align: center;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+</style>
