@@ -4,8 +4,8 @@ description: "Technical documentation / Architectural Overview"
 baseurl: "/corefinder"
 url: "https://corefinder89.github.io"
 
-# Use logo file
-logo: "/assets/image/logo.svg"
+# Custom site header
+site_title_include: "site-title.html"
 
 # Documentation Theme
 remote_theme: pmarsceill/just-the-docs
