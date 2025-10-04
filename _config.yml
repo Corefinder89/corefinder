@@ -55,26 +55,6 @@ toc:
 # Code highlighting
 highlighter: rouge
 color_scheme: light
-
-# Mermaid configuration for technical diagrams
-mermaid:
-  src: 'https://unpkg.com/mermaid@10/dist/mermaid.min.js'
-  config:
-    theme: 'default'
-    themeVariables:
-      primaryColor: '#0366d6'
-      primaryTextColor: '#24292e'
-      primaryBorderColor: '#d1d5da'
-      lineColor: '#586069'
-      secondaryColor: '#f6f8fa'
-      tertiaryColor: '#ffffff'
-    flowchart:
-      useMaxWidth: true
-      htmlLabels: true
-      curve: 'basis'
-    sequence:
-      useMaxWidth: true
-      actorMargin: 50
       
 # Footer content
 footer_content: "Copyright &copy; 2025 Soumyajit Basu. Technical documentation for Corefinder URL Shortener."
