@@ -1,3 +1,10 @@
+---
+layout: default
+title: URL Shortener Technical Guide
+description: Comprehensive technical documentation for the Corefinder URL shortening system
+nav_order: 2
+---
+
 # Corefinder URL Shortener - Technical Guide
 
 ## Overview
