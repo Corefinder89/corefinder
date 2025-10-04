@@ -196,7 +196,7 @@ graph TB
     
     subgraph "Component Architecture"
         N[main.py<br/>Business Card<br/>URL Integration] --> O[url_shortener.py<br/>HTTP Server<br/>Short Code Generator<br/>Terminal Hyperlinks]
-        O --> P[SQLite Database<br/>urls table<br/>short_code | original_url]
+        O --> P["SQLite Database<br/>urls table<br/>Columns: short_code, original_url"]
         O --> Q[HTTP Server<br/>Background Thread<br/>Port: 8888+<br/>Handles: GET<br/>Returns: 302]
     end
     
