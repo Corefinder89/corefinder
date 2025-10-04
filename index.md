@@ -19,7 +19,7 @@ Comprehensive technical documentation covering:
 - Visual flow diagrams
 - Implementation details
 
-### [🚀 Main Project README](README.md)
+### [🚀 Main Project README](documentation/README.md)
 General project information, installation, and usage instructions.
 
 ---

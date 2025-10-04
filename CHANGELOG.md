@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Documentation [\#9](https://github.com/Corefinder89/corefinder/pull/9) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#8](https://github.com/Corefinder89/corefinder/pull/8) ([Corefinder89](https://github.com/Corefinder89))
 - Add changes to readme [\#7](https://github.com/Corefinder89/corefinder/pull/7) ([Corefinder89](https://github.com/Corefinder89))
 - Enhancements [\#6](https://github.com/Corefinder89/corefinder/pull/6) ([Corefinder89](https://github.com/Corefinder89))
