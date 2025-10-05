@@ -87,6 +87,11 @@ def main():
                     "issued_date": "July, 2017",
                     "credentials": "UC-VB821J3L",
                     "link": url_shortener.create_terminal_link("https://www.udemy.com/certificate/UC-VB821J3L/") if url_shortener else "https://www.udemy.com/certificate/UC-VB821J3L/"
+                },
+                "certification-5": {
+                    "certification_name": "Forging CI pipelines for selenium with kubernetes and aws",
+                    "issued_by": "The Test Tribe",
+                    "issued_date": "November, 2024"
                 }
             },
             "personal_details": {
@@ -98,6 +103,34 @@ def main():
                 "permanent_location": "Kolkata, West Bengal",
                 "zip_code_permanent": 700048,
                 "blood_group": "B-"
+            },
+            "accolades": {
+                "accolade-1": {
+                    "title": "Dzone core member",
+                    "issued_by": "Dzone",
+                    "issued_date": "October, 2023",
+                    "credentials": 25519461103392,
+                    "description": "Awarded for being the most valuable blogger contributing actively to the Dzone community.",
+                    "link": url_shortener.create_terminal_link("https://verified.sertifier.com/en/verify/25519461103392/") if url_shortener else "https://verified.sertifier.com/en/verify/25519461103392/"
+                },
+                "accolade-2": {
+                    "title": "Certificate of participation",
+                    "issued_by": "Shree Agrasain College",
+                    "issued_date": "October, 2025",
+                    "description": "Resource person for delivering a seminar to the students of the college"
+                },
+                "accolade-3": {
+                    "title": "Team Excellence",
+                    "issued_by": "Encora",
+                    "issued_date": "June, 2024, October 2023",
+                    "description": "Awarded for being a team player",
+                },
+                "accolade-4": {
+                    "title": "Living our values",
+                    "issued_by": "Encora",
+                    "issued_date": "July, 2025",
+                    "description": "Awarded for outstanding performance for the quarter"
+                }
             }
         }
     }

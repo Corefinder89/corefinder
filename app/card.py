@@ -51,7 +51,7 @@ def card(json_obj, work_ex):
                       .m...qa..,y:                  Zip code permanent: {json_obj.get("attributes").get("personal_details").get("zip_code_permanent")}
                       .HQFNB&...mm                  Blood group: {json_obj.get("attributes").get("personal_details").get("blood_group")}
                        ,Z|,m.a.,dp                  
-                    .,?f` ,E?:"^7b                  Certifications:
+                    .,?f` ,E?:"^7b                  Certifications:                                                                                                   
                     `A| . .F^^7'^4,                  Name: {json_obj.get("attributes").get("certifications").get("certification-1").get("certification_name")}  
                      .MMMMMMMMMMMQzna,               Issuer: {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_by")}
                  ...f"A.JdT     J:    Jp,            Issue date: {json_obj.get("attributes").get("certifications").get("certification-1").get("issued_date")}\n
@@ -69,7 +69,30 @@ def card(json_obj, work_ex):
                                                      Issuer: {json_obj.get("attributes").get("certifications").get("certification-4").get("issued_by")}
                                                      Issue date: {json_obj.get("attributes").get("certifications").get("certification-4").get("issued_date")}
                                                      Credentials: {json_obj.get("attributes").get("certifications").get("certification-4").get("credentials")}
-                                                     Link: {json_obj.get("attributes").get("certifications").get("certification-4").get("link")}
+                                                     Link: {json_obj.get("attributes").get("certifications").get("certification-4").get("link")}\n
+                                                     Name: {json_obj.get("attributes").get("certifications").get("certification-5").get("certification_name")}
+                                                     Issuer: {json_obj.get("attributes").get("certifications").get("certification-5").get("issued_by")}
+                                                     Issue date: {json_obj.get("attributes").get("certifications").get("certification-5").get("issued_date")}\n
+
+            Accolades:
+             Name: {json_obj.get("attributes").get("accolades").get("accolade-1").get("title")}
+             Issuer: {json_obj.get("attributes").get("accolades").get("accolade-1").get("issued_by")}
+             Issue date: {json_obj.get("attributes").get("accolades").get("accolade-1").get("issued_date")}
+             Credentials: {json_obj.get("attributes").get("accolades").get("accolade-1").get("credentials")}
+             Description: {json_obj.get("attributes").get("accolades").get("accolade-1").get("description")}
+             Link: {json_obj.get("attributes").get("accolades").get("accolade-1").get("link")}\n
+             Name: {json_obj.get("attributes").get("accolades").get("accolade-2").get("title")}
+             Issuer: {json_obj.get("attributes").get("accolades").get("accolade-2").get("issued_by")}
+             Issue date: {json_obj.get("attributes").get("accolades").get("accolade-2").get("issued_date")}
+             Description: {json_obj.get("attributes").get("accolades").get("accolade-2").get("description")}\n
+             Name: {json_obj.get("attributes").get("accolades").get("accolade-3").get("title")}
+             Issuer: {json_obj.get("attributes").get("accolades").get("accolade-3").get("issued_by")}
+             Issue date: {json_obj.get("attributes").get("accolades").get("accolade-3").get("issued_date")}
+             Description: {json_obj.get("attributes").get("accolades").get("accolade-3").get("description")}\n
+             Name: {json_obj.get("attributes").get("accolades").get("accolade-4").get("title")}
+             Issuer: {json_obj.get("attributes").get("accolades").get("accolade-4").get("issued_by")}
+             Issue date: {json_obj.get("attributes").get("accolades").get("accolade-4").get("issued_date")}
+             Description: {json_obj.get("attributes").get("accolades").get("accolade-4").get("description")}
         """
     )
     return output
