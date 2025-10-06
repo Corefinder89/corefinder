@@ -34,7 +34,7 @@ corefinder
 ```bash
 git clone https://github.com/Corefinder89/corefinder.git
 cd corefinder
-pip install -e .
+pip install --use-feature=in-tree-build .
 corefinder
 ```
 
