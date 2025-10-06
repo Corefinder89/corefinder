@@ -12,3 +12,4 @@ build/
 Code Citations.md
 .ruby-version
 Gemfile.lock
+venv/
