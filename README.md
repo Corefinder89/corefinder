@@ -238,7 +238,7 @@ python tests/test_main.py
 
 **Module not found errors:**
 ```bash
-pip install -e . --force-reinstall
+pip install --use-feature=in-tree-build . --force-reinstall
 ```
 
 **Server port conflicts:**
@@ -246,7 +246,7 @@ pip install -e . --force-reinstall
 
 **Changes not reflected:**
 ```bash
-pip install -e . --force-reinstall
+pip install --use-feature=in-tree-build . --force-reinstall
 corefinder
 ```
 
