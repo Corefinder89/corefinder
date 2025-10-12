@@ -34,6 +34,7 @@
 
 **Merged pull requests:**
 
+- Add accolades to main.py [\#23](https://github.com/Corefinder89/corefinder/pull/23) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#22](https://github.com/Corefinder89/corefinder/pull/22) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#21](https://github.com/Corefinder89/corefinder/pull/21) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#20](https://github.com/Corefinder89/corefinder/pull/20) ([Corefinder89](https://github.com/Corefinder89))
