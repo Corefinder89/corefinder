@@ -1,12 +1,39 @@
 # Changelog
 
+## [v1.2.9](https://github.com/Corefinder89/corefinder/tree/v1.2.9) (2025-10-12)
+
+[Full Changelog](https://github.com/Corefinder89/corefinder/compare/v1.2.7...v1.2.9)
+
+### ✨ **Enhancements** 
+- **ASCII Art Alignment**: Fixed all alignment issues with Calvin character display across all modes
+- **Template System Overhaul**: Restructured card generation with individual field placeholders for perfect formatting.
+- **URL Shortener Integration**: Maintained cf.link branded URLs across all display modes
+- **Added accolades**: Added accolades as part of the display.
+- **Professional Status Update**: Updated development status to "Production/Stable"
+
+### 🔧 **Technical Improvements**
+- **Build System Migration**: Migrated from setup.py to modern pyproject.toml configuration
+- **Makefile Integration**: Added automated build, test, and publish workflows
+- **Package Metadata**: Enhanced package classification and keywords for better discoverability
+
+
+### 📚 **Documentation**
+- **Installation Instructions**: Updated README with in-tree build commands
+- **Usage Examples**: Added comprehensive examples for all new features
+- **API Documentation**: Enhanced docstrings and function signatures
+- **Changelog Management**: Improved changelog automation and formatting
+
+### 🔗 **Dependencies & Build**
+- **Build Tools**: Updated to use `build` and `twine` for modern Python packaging
+- **Package Structure**: Optimized package data inclusion and exclusions
+- **Python Compatibility**: Maintained support for Python 3.6+ while leveraging modern features
+
 ## [Unreleased](https://github.com/Corefinder89/corefinder/tree/HEAD)
 
-[Full Changelog](https://github.com/Corefinder89/corefinder/compare/v1.2.7...HEAD)
+[Full Changelog](https://github.com/Corefinder89/corefinder/compare/v1.2.9...HEAD)
 
 **Merged pull requests:**
 
-- Documentation [\#24](https://github.com/Corefinder89/corefinder/pull/24) ([Corefinder89](https://github.com/Corefinder89))
 - Add accolades to main.py [\#23](https://github.com/Corefinder89/corefinder/pull/23) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#22](https://github.com/Corefinder89/corefinder/pull/22) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#21](https://github.com/Corefinder89/corefinder/pull/21) ([Corefinder89](https://github.com/Corefinder89))
