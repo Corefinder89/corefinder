@@ -4,19 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "corefinder"
-version = "1.2.7"
+version = "1.2.8"
 authors = [
   { name="Soumyajit Basu", email="soumyajit.basu62@gmail.com" },
 ]
 description = "A sophisticated Python CLI application that generates a beautiful ASCII art digital business card with interactive URL shortening and clickable hyperlinks"
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -27,7 +25,7 @@ classifiers = [
     "Topic :: System :: System Shells",
     "Environment :: Console",
 ]
-license = {file = "LICENSE"}
+license = {text = \"MIT\"}
 keywords = ["cli", "business-card", "ascii-art", "url-shortener", "terminal", "hyperlinks", "digital-card"]
 
 [project.urls]
