@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Documentation [\#24](https://github.com/Corefinder89/corefinder/pull/24) ([Corefinder89](https://github.com/Corefinder89))
 - Add accolades to main.py [\#23](https://github.com/Corefinder89/corefinder/pull/23) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#22](https://github.com/Corefinder89/corefinder/pull/22) ([Corefinder89](https://github.com/Corefinder89))
 - Documentation [\#21](https://github.com/Corefinder89/corefinder/pull/21) ([Corefinder89](https://github.com/Corefinder89))
