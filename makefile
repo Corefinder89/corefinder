@@ -1,8 +1,8 @@
 .PHONY: clean build publish
 
 build: clean
-	python -m pip install --upgrade --quiet setuptools wheel twine
-	python setup.py --quiet sdist bdist_wheel
+	python -m pip install --upgrade --quiet build twine
+	python -m build
 
 publish: build
 	python -m twine check dist/*
