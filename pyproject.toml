@@ -1,3 +1,51 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "corefinder"
+version = "1.2.9"
+authors = [
+  { name="Soumyajit Basu", email="soumyajit.basu62@gmail.com" },
+]
+description = "A sophisticated Python CLI application that generates a beautiful ASCII art digital business card with interactive URL shortening and clickable hyperlinks"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Topic :: System :: System Shells",
+    "Environment :: Console",
+]
+license = "MIT"
+keywords = ["cli", "business-card", "ascii-art", "url-shortener", "terminal", "hyperlinks", "digital-card"]
+
+[project.urls]
+Homepage = "https://github.com/Corefinder89/corefinder"
+Repository = "https://github.com/Corefinder89/corefinder"
+Issues = "https://github.com/Corefinder89/corefinder/issues"
+Changelog = "https://github.com/Corefinder89/corefinder/blob/master/CHANGELOG.md"
+Documentation = "https://github.com/Corefinder89/corefinder/blob/master/README.md"
+
+[project.scripts]
+corefinder = "app.main:main"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", "*.txt", "*.yml", "*.yaml", "*.png"]
