@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: System :: System Shells",
     "Environment :: Console",
 ]
-license = {text = \"MIT\"}
+license = "MIT"
 keywords = ["cli", "business-card", "ascii-art", "url-shortener", "terminal", "hyperlinks", "digital-card"]
 
 [project.urls]
